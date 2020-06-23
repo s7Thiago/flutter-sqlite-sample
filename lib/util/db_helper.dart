@@ -24,7 +24,7 @@ class DBHelper {
     if (_db != null) {
       return _db;
     }
-    _db = await initDatabase();
+    return _db = await initDatabase();
   }
 
   initDatabase() async {
@@ -33,6 +33,8 @@ class DBHelper {
 
     var innerDatabase =
         await openDatabase(path, version: 1, onCreate: _onCreate);
+
+    return innerDatabase;
   }
 
   void _onCreate(Database db, int version) async {
