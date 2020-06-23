@@ -8,8 +8,27 @@ main() async {
   var db = DBHelper();
 
   // Adding a new user
-  int savedUser = await db.insertUser(User('Anna', 'Anna@456'));
-  print('Saved user: $savedUser');
+  // int savedUser = await db.insertUser(User('Anna', 'Anna@456'));
+
+  // getting the users count
+  int usersCount = await db.usersLenght();
+  print('Users count: $usersCount');
+
+  // Updating a user
+/*   int updateAnna = await db.updateUser(User.fromMap({
+    'name': 'Anna paula carvalho',
+    'password': 'annapc@456',
+    'id': 0,
+  })); */
+
+  // getting a user
+/*   User anna = await db.getUserById(2);
+  print('User found: ${anna.toMap()}'); */
+
+  // Deleting a user from database
+  int userDeleted = await db.deleteUserById(4);
+  print('User deleted: $userDeleted');
+  print('Users count: $usersCount');
 
   runApp(App());
 }

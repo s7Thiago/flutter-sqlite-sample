@@ -1,10 +1,10 @@
 class User {
-  String _id;
+  int _id;
   String _name;
   String _password;
 
   // getters
-  String get id => _id;
+  int get id => _id;
   String get password => _password;
   String get name => _name;
 
